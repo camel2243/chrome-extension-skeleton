@@ -1,3 +1,5 @@
+> This Repo is forked from https://github.com/salsita/chrome-extension-skeleton
+
 ## Skeleton for Google Chrome extensions
 
 * includes awesome messaging module
