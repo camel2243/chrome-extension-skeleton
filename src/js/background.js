@@ -1,3 +1,4 @@
+/* global chrome */
 import handlers from './modules/handlers';
 import msg from './modules/msg';
 
@@ -38,3 +39,17 @@ function helloWorld() {
 
 // start broadcasting loop
 helloWorld();
+
+
+chrome.runtime.onInstalled.addListener((details) => {
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
+    chrome.declarativeContent.onPageChanged.addRules([{
+      conditions: [
+        new chrome.declarativeContent.PageStateMatcher({
+          pageUrl: { urlContains: 'www.yourator.co', schemes: ['http', 'https'] }
+        })
+      ],
+      actions: [new chrome.declarativeContent.ShowPageAction()]
+    }]);
+  });
+});

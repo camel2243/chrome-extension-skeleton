@@ -1,7 +1,7 @@
 {
-  "name": "extension-skeleton",
+  "name": "talent-recommend-tool",
   "version": "0.3.0",
-  "description": "Bare Google Chrome extension skeleton.",
+  "description": "test fo talent recommendation",
   "engines": {
     "node": "7.0.0",
     "npm": "3.10.8"

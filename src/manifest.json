@@ -1,21 +1,43 @@
 {
   "manifest_version": 2,
-  "icons": { "128": "images/icon.png" },
-  "browser_action": {
-    "default_icon": "images/icon.png",
+  "icons": {
+    "32": "images/favicon-32x32.png"
+  },
+  "page_action": {
     "default_popup": "html/popup.html"
   },
-  "background": { "scripts": ["js/background.js"] },
-  "content_scripts": [{
-    "matches": [ "http://*/*", "https://*/*" ],
-    "js": [ "js/content.js" ]
-  }],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.yourator.co/*"
+      ],
+      "js": [
+        "js/content.js"
+      ]
+    }
+  ],
   "options_page": "html/options.html",
   "devtools_page": "html/devtools.html",
-  "permissions": [ "<all_urls>" ],
-  "web_accessible_resources": [ "js/*", "html/*", "css/*", "images/*" ],
+  "permissions": [
+    "https://www.yourator.co/*",
+    "https://li2009-165.members.linode.com:9200/*",
+    "declarativeContent",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "js/*",
+    "html/*",
+    "css/*",
+    "images/*"
+  ],
   "content_security_policy": "script-src 'self'; object-src 'self'",
-  "name": "<%= package.name %>",
-  "version": "<%= package.version %>",
-  "description": "<%= package.description %>"
+  "name": "talent recommend tool",
+  "version": "0.0.0",
+  "description": "test for talent recommendation"
 }
